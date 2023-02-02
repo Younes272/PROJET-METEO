@@ -13,3 +13,5 @@ Entrez le nom de votre fichier :(c'est là qu'il faut entrer le nom du fichier)
 
 si le makefile ne s'est pas bien compilé à l'execution du programme, il suffit d'écrire "make" dans le terminal, ce qui permettra de recompiler tous les programmes.
 pour supprimer les fichiers temporaires et les executables , ecrire "make clean" dans le terminal
+
+Si il y a un quelconque soucis de terminal gnuplot, mettre toutes les lignes "set terminal wxt" des fichiers .plt en argument , puis réessayer. 
