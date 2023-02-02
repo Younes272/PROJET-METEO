@@ -72,7 +72,6 @@ echo "Veuillez patienter..."
 tail -n +2 $str > meteo0.csv
 awk -F';' '$15 ~ /^[01-95]/ && $15 < 96000 {print}' meteo0.csv > filtre.csv
 echo "filtre France metropolitaine  appliqué!" ; fi
-awk 'BEGIN{FS=";"}{print $0,";",substr($2,12,2)}' meteo1.csv > h24.csv
 
 
 if [[ $region == "G" ]]; then
