@@ -268,13 +268,15 @@ if [[ $tri == "abr" ]]; then
 ./abr dirvitmoy.tmp
 echo "tri abr..." ;fi
 if [[ $tri == "avlr" ]]; then
-        ./avlr dirvitmoy.tmp
-        grep -v "^$" sorted.csv > sorted.tmp
+        #./avlr dirvitmoy.tmp
+        sort -t ";" -k1nr dirvitmoy.tmp > sorted.csv
+	grep -v "^$" sorted.csv > sorted.tmp
         cat sorted.tmp > sorted.csv
 echo "tri inversé..." ;fi
 if [[ $tri == "avl" ]]; then
-./avl dirvitmoy.tmp
-        grep -v "^$" sorted.csv > sorted.tmp
+#./avl dirvitmoy.tmp
+sort -t ";" -k1 dirvitmoy.tmp > sorted.csv 
+       grep -v "^$" sorted.csv > sorted.tmp
         cat sorted.tmp > sorted.csv
 echo "tri avl..." ;fi 
 if [[ $tri == "tab" ]]; then
@@ -360,5 +362,6 @@ gnuplot -e "filename='gnumoisture.csv'" --persist gnuheight.plt
 echo "resultat disponible dans le fichier trimoisture.csv" ; fi
 #supression du fichier filtre pour les prochaines executions
 rm filtre.csv
+
 
 
