@@ -1,4 +1,5 @@
 README du projet meteo Younes Kaddache/ Elouan Ekoka / Nour Zaoui 
+Le Programme fonctionne très bien dans l'ensemble sur un environnement UBUNTU. En revanche il a quelques petits bugs sur un environnement Debian( le graphique de -t1 n'affiche pas bien le max et le min car la fonction de calcul du max et du min ne fonctionnent pas sur Debian malgre qu'elles fonctionnent sur UBUNTU)
 Pour executer le projet , il faut prealablement accorder les droits d'execution aux  fichiers , si cela n'est pas fait automatiquement
 il faut donner le repertoire courant puis le nom du main programme et c'est après cela que l'on peut donner les options(-t1 -r -w -d --abr etc...)
 
