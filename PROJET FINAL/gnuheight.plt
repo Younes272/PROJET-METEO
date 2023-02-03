@@ -13,7 +13,7 @@ set datafile separator ";"
 set xrange [-180:180]
 set zrange [0:1000]
 set yrange [-90:90]
-set cbrange [0:100]
+set cbrange 
 set palette defined (0 "blue", 1 "cyan", 2 "green", 4 "red")
 unset key
 splot filename using 4:3:2 with point lc palette  
