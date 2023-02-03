@@ -26,9 +26,11 @@ int getBalance(Noeud* node) {
     if (node == NULL) {
         return 0;
     }
+	/* Retourner la différence de hauteur entre le fils gauche et le fils droit */
     return height(node->left) - height(node->right);
 }
 
+/* effectue une rotation à droite sur un noeud donné */
 Noeud* rightRotate(Noeud* node) {
     Noeud* leftChild = node->left;
     Noeud* rightSubTree = leftChild->right;
@@ -38,7 +40,7 @@ Noeud* rightRotate(Noeud* node) {
     leftChild->height = max(height(leftChild->left), height(leftChild->right)) + 1;
     return leftChild;
 }
-
+/* effectue une rotation à gauche sur un noeud donné */
 Noeud* leftRotate(Noeud* node) {
     Noeud* rightChild = node->right;
     Noeud* leftSubTree = rightChild->left;
@@ -133,7 +135,7 @@ int main(int argc, char *argv[]) {
     fclose(file);
     FILE* output = fopen("sorted.csv", "w");
     if(output == NULL) {
-        printf("Erreur : impossible d'ouvrir le fichier sorted_data.txt\n");
+        printf("Erreur : impossible d'ouvrir le fichier sorted.csv\n");
         return 1;
     }
     printf("\n");
