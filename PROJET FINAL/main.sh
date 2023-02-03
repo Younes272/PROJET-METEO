@@ -184,10 +184,10 @@ if [[ $temperature == 3 ]]; then
 echo "(t3)Veuillez patienter..."
 sort -t ";" -k2,2 -k1,1 filtre.csv > tridatestation.tmp
 cut -d ";" -f 1,2,11 tridatestation.tmp > trit3.csv
-awk 'BEGIN{FS=";"}{print $0,";",substr($2,12,2)}' filtre.csv > h24.csv
+awk 'BEGIN{FS=";"}{print $0,";",substr($2,12,2)}' filtre.csv > h24.tmp
 echo "resultat disponible dans le fichier trit3.csv"
 echo "generation du graphique multiligne..."
-gnuplot -e "filename='h24.csv'" --persist multilignefinal.plt ; fi
+gnuplot -e "filename='h24.tmp'" --persist multilignefinal.plt ; fi
 
 #traitement de -p1 à l'aide du shell et du c 
 if [[ $pression == 1 ]]; then
@@ -245,12 +245,12 @@ gnuplot -e "filename='trip2.csv'" --persist simpleline2.plt   ; fi
 #traitement de -p3 à l'aide du shell et du c 
 if [[ $pression == 3 ]]; then
 echo "(p3)Veuillez patienter..."
-sort -t ";" -k2,2 -k1,1 filtre.csv > tridatestationpression.csv
-cut -d ";" -f 1,2,7 tridatestationpression.csv > trip3.csv
+sort -t ";" -k2,2 -k1,1 filtre.csv > tridatestationpression.tmp
+cut -d ";" -f 1,2,7 tridatestationpression.tmp > trip3.csv
 echo "resultat disponible dans le fichier trip3.csv"
-awk 'BEGIN{FS=";"}{print $0,";",substr($2,12,2)}' filtre.csv > h24.csv
+awk 'BEGIN{FS=";"}{print $0,";",substr($2,12,2)}' filtre.csv > h24.tmp
 echo "generation du graphique multiligne..."
-gnuplot -e "filename='h24.csv'" --persist multilignefinalpression.plt  ; fi
+gnuplot -e "filename='h24.tmp'" --persist multilignefinalpression.plt  ; fi
 
 #traitement de -w à l'aide du shell et du c 
 if [[ $wind == 1 ]]; then
