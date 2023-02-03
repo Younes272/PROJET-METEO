@@ -1,6 +1,6 @@
 set grid
 set title 'Barre d''erreur'
-set xlabel 'Station/Date'
+set xlabel 'Station'
 set ylabel 'Meteo'
 set style histogram errorbars
 set datafile separator ";"
